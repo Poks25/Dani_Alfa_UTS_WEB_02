@@ -1,35 +1,13 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8"><title>Detail Produk - Alfas Step</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<div id="navbar"></div>
-
-<body class="bg-white">
-    <div id="navbar"></div>
-    <main class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-12" id="detail-container">
-        </main>
-    <script src="js/auth.js"></script><script src="js/ui.js"></script><script src="js/cart.js"></script>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
-
-        fetch('data/products.json').then(res => res.json()).then(products => {
-            const p = products.find(item => item.id === productId);
-            if(p) {
-                document.getElementById('detail-container').innerHTML = `
-                    <img src="${p.image}" class="rounded-3xl w-full object-cover h-[500px]">
-                    <div>
-                        <span class="text-indigo-600 font-bold uppercase tracking-widest text-sm">${p.category}</span>
-                        <h1 class="text-4xl font-black mt-2 mb-4">${p.name}</h1>
-                        <p class="text-2xl font-bold text-slate-900 mb-6">Rp ${p.price.toLocaleString('id-ID')}</p>
-                        <p class="text-slate-500 mb-8 leading-relaxed">Sepatu premium dengan kualitas ekspor, dirancang khusus untuk kenyamanan Dhani Alfa's Customer.</p>
-                        <button onclick='Cart.add(${JSON.stringify(p)})' class="bg-slate-900 text-white px-12 py-4 rounded-2xl font-bold">TAMBAH KE KERANJANG</button>
-                    </div>`;
-            }
-        });
-    </script>
-</body>
-</html>
+<div class="mt-8 border-t border-gray-100 pt-6">
+  <h4 class="text-sm font-bold text-gray-800 mb-3 uppercase tracking-wider text-center lg:text-left">Panduan Ukuran (EU)</h4>
+  <div class="grid grid-cols-5 gap-2 max-w-sm mx-auto lg:mx-0">
+    <div class="border rounded-lg py-2 text-center text-xs hover:border-slate-900 cursor-pointer">39</div>
+    <div class="border rounded-lg py-2 text-center text-xs hover:border-slate-900 cursor-pointer">40</div>
+    <div class="border rounded-lg py-2 text-center text-xs hover:border-slate-900 cursor-pointer border-slate-900 bg-slate-900 text-white">41</div>
+    <div class="border rounded-lg py-2 text-center text-xs hover:border-slate-900 cursor-pointer">42</div>
+    <div class="border rounded-lg py-2 text-center text-xs hover:border-slate-900 cursor-pointer">43</div>
+  </div>
+  <p class="text-[10px] text-gray-400 mt-3 text-center lg:text-left">
+    *Jika Anda ragu dengan ukuran, silakan konsultasikan dengan Admin kami.
+  </p>
+</div>
